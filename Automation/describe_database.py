@@ -19,7 +19,7 @@ cursor.execute("SHOW TABLES")
 l = cursor.fetchall()
 q = []
 for i in l:
-    if type(i)==str:
+    if type(i[0])==str:
         q.append(i[0])
     else:
         q.append(i[0].decode())
