@@ -6,9 +6,16 @@ mydb = mysql.connector.connect(
     password = "pQhvn3a6xMFxWJ09iA5M",
     database = "b1hjbod5x53zcqbm37to")
 
-
-print (mydb)
-
 cursor = mydb.cursor()
 
-cursor.execute("CREATE TABLE ABC (name varchar(255), id INT)")
+# cursor.execute("drop table washroom")
+# cursor.execute("SELECT * FROM washroom")
+# tables = cursor.fetchall()
+
+# print (tables)
+
+cursor.execute("SELECT COUNT(w.ID)-COUNT(DISTINCT w.ID) FROM Workers w RIGHT JOIN assignments a ON w.ID = a.ID")
+l = cursor.fetchall()
+for i in l:
+    print (i)
+# mydb.commit()
