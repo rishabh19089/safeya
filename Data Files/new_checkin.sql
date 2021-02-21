@@ -5,3 +5,5 @@ CREATE TABLE `checkin` (
   `visitor_id` mediumint PRIMARY KEY,
   foreign key (Security_ID) references Security(Security_ID)
 );
+
+#the input data is stored in checkin1.csv
