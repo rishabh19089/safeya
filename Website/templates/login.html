@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/style2.css')}}">
+  </head>
+  <body>
+    
+    <img src="{{url_for('static', filename='images/logo.png')}}" alt="" class="cent">
+<div class="center">
+  <h1>Login</h1>
+  <form class="" action="{{ url_for('home') }}" method="post">
+    <div class="textfield">
+      <input id="username" name="username" type="text" required>
+      <label>Username</label>
+
+    </div>
+    <div class="textfield">
+      <input id="passkey" name="passkey" type="password" required>
+      <label>Password</label>
+    </div>
+    <input type="submit" value="Login">
+    <span>{{ msg }}</span>
+  </form>
+
+</div>
+  </body>
+</html>

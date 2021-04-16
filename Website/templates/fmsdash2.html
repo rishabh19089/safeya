@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FMS Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/styleA.css')}}">
+
+    <!-- <script src="js/jquery-3.5.1.min.js"></script> -->
+</head>
+
+<body>
+
+    <div class="wrap">
+
+
+        <div class="sidebar">
+
+           <h1>Welcome FMS</h1>
+            <ul>
+              <li><div onclick="return myFunctio();">My details</div></li>
+                <li><div onclick="return myFunction0();">Staff available for work:</div></li>
+                <li><div onclick="return myFunction1();">Locations that have not been clean in the last 7 days and request not active</div></li>
+                 <li> <div onclick="return myFunction2();">List of underperforming staff</div></li>
+                  <li><div onclick="return myFunction3();">List of unassigned tasks</div></li>
+                  <li><div onclick="return myFunction4();">View washroom</div></li>
+                  <li><div onclick="return myFunction5();">Get complaint remarks</div></li>
+                  <li><div onclick="return myFunction6();">View and rate complaint</div></li>
+                  <li><div onclick="return myFunction7();">View tasks in progress</div></li>
+            </ul>
+        </div>
+
+
+        <section class="main">
+            <!-- <h1>Content Box</h1> -->
+            <img src="{{url_for('static', filename='images/IIITlogo.png')}}" alt="" class="iiit">
+            <img src="{{url_for('static', filename='images/logo.png')}}" alt="" class="safeya">
+
+            <div class="deets-1" id="div-1"> <label>Name: <br><br> Roll Number: <br><br> Age: <br><br> Gender: <br> </label></div>
+
+
+            <div class="deets" id="div0"> <label>Available members are- </label></div>
+
+            <div class="checkup" id="div1"> <label>The locations are-</label></div>
+
+            <div class="clean" id="div2"> <label>Members with rating less than 2.5 are-</label></div>
+
+            <!-- <div class="req" id="div3">
+            <form class="" action="" method="post">
+              <label>Choose the room you want to get cleaned</label><br><br>
+
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">My room</label><br><br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Other room</label><br>
+                <input type="text" id="fname" name="fname" value="Mention room no."><br>
+                <input type="submit" name="submit" value="Submit">
+            </form>
+              </div> -->
+
+              <div class="req" id="div3"><label>The unassigned tasks-</label>
+
+                </div>
+
+
+              <!-- <div class="rate" id="div4"> <label>Rate a complaint</label><br>
+                <input type="text" id="fname" name="fname" value="Mention complaint no."><br>
+
+                            <div class="stars">
+                              <form action="">
+                                <input class="star star-5" id="star-5" type="radio" name="star"/>
+                                <label class="star star-5" for="star-5"></label>
+                                <input class="star star-4" id="star-4" type="radio" name="star"/>
+                                <label class="star star-4" for="star-4"></label>
+                                <input class="star star-3" id="star-3" type="radio" name="star"/>
+                                <label class="star star-3" for="star-3"></label>
+                                <input class="star star-2" id="star-2" type="radio" name="star"/>
+                                <label class="star star-2" for="star-2"></label>
+                                <input class="star star-1" id="star-1" type="radio" name="star"/>
+                                <label class="star star-1" for="star-1"></label>
+                                <div class="num">1 &ensp; 2  &ensp; 3  &ensp; 4  &ensp; 5</div>
+                                <input type="submit" name="submit" value="Submit">
+                              </form>
+
+                            </div>
+              </div> -->
+
+              <div class="rate" id="div4"> <label>Mention location id to view image</label><br>
+                <input type="text" id="fname" name="fname" value=""><br>
+
+                            <div class="stars">
+                              <form action="">
+                                <input type="submit" name="submit" value="Submit">
+                              </form>
+
+                            </div>
+              </div>
+
+              <div class="five" id="div5"> <label>Mention complaint id to view remarks</label><br>
+                <input type="text" id="fname" name="fname" value=""><br>
+
+                            <div class="stars">
+                              <form action="">
+                                <input type="submit" name="submit" value="Submit">
+                              </form>
+
+                            </div>
+              </div>
+
+              <div class="six" id="div6"> <label></label><br>
+                <div class="stars">
+                  <form action="">
+
+                    <input type="text" id="fname" name="fname" value="Mention complaint id"> <br>
+                    <input type="submit" name="submit" value="Check"> <br> <br> <br>
+                    <label>Give rating</label><br>
+                    <input class="star star-5" id="star-5" type="radio" name="star"/>
+                    <label class="star star-5" for="star-5"></label>
+                    <input class="star star-4" id="star-4" type="radio" name="star"/>
+                    <label class="star star-4" for="star-4"></label>
+                    <input class="star star-3" id="star-3" type="radio" name="star"/>
+                    <label class="star star-3" for="star-3"></label>
+                    <input class="star star-2" id="star-2" type="radio" name="star"/>
+                    <label class="star star-2" for="star-2"></label>
+                    <input class="star star-1" id="star-1" type="radio" name="star"/>
+                    <label class="star star-1" for="star-1"></label>
+                    <div class="num">1 &ensp; 2  &ensp; 3  &ensp; 4  &ensp; 5</div> <br> <br>
+                    <label>Give remarks</label><br>
+                    <input type="text" id="fname" name="fname" value=""> <br>
+                    <input type="submit" name="submit" value="Submit">
+
+                  </form>
+
+                </div>
+              </div>
+
+              <div class="seven" id="div7"><label>The tasks in progress are-</label>
+
+                </div>
+
+
+                <div class="logout">
+                                <a href="{{ url_for('logout') }}">Logout</a>
+                              </div>
+
+        </section>
+
+    </div>
+
+    <script>
+
+
+    function myFunctio() {
+      document.getElementById("div-1").style.display = "block";
+      document.getElementById("div0").style.display = "none";
+      document.getElementById("div1").style.display = "none";
+      document.getElementById("div2").style.display = "none";
+      document.getElementById("div3").style.display = "none";
+      document.getElementById("div4").style.display = "none";
+      document.getElementById("div5").style.display = "none";
+      document.getElementById("div6").style.display = "none";
+      document.getElementById("div7").style.display = "none";
+
+    }
+
+    function myFunction0() {
+      document.getElementById("div0").style.display = "block";
+      document.getElementById("div1").style.display = "none";
+      document.getElementById("div2").style.display = "none";
+      document.getElementById("div3").style.display = "none";
+      document.getElementById("div4").style.display = "none";
+      document.getElementById("div5").style.display = "none";
+      document.getElementById("div6").style.display = "none";
+      document.getElementById("div7").style.display = "none";
+      document.getElementById("div-1").style.display = "none";
+
+
+    }
+
+    function myFunction0() {
+      document.getElementById("div0").style.display = "block";
+      document.getElementById("div1").style.display = "none";
+      document.getElementById("div2").style.display = "none";
+      document.getElementById("div3").style.display = "none";
+      document.getElementById("div4").style.display = "none";
+      document.getElementById("div5").style.display = "none";
+      document.getElementById("div6").style.display = "none";
+      document.getElementById("div7").style.display = "none";
+      document.getElementById("div-1").style.display = "none";
+
+
+    }
+
+
+  function myFunction1() {
+    document.getElementById("div1").style.display = "block";
+    document.getElementById("div2").style.display = "none";
+    document.getElementById("div3").style.display = "none";
+    document.getElementById("div4").style.display = "none";
+    document.getElementById("div0").style.display = "none";
+    document.getElementById("div5").style.display = "none";
+    document.getElementById("div6").style.display = "none";
+    document.getElementById("div7").style.display = "none";
+    document.getElementById("div-1").style.display = "none";
+
+
+  }
+
+  function myFunction2() {
+    document.getElementById("div2").style.display = "block";
+    document.getElementById("div1").style.display = "none";
+    document.getElementById("div3").style.display = "none";
+    document.getElementById("div4").style.display = "none";
+    document.getElementById("div0").style.display = "none";
+    document.getElementById("div5").style.display = "none";
+    document.getElementById("div6").style.display = "none";
+    document.getElementById("div7").style.display = "none";
+    document.getElementById("div-1").style.display = "none";
+
+
+  }
+
+  function myFunction3() {
+    document.getElementById("div3").style.display = "block";
+    document.getElementById("div1").style.display = "none";
+    document.getElementById("div2").style.display = "none";
+    document.getElementById("div4").style.display = "none";
+    document.getElementById("div0").style.display = "none";
+    document.getElementById("div5").style.display = "none";
+    document.getElementById("div6").style.display = "none";
+    document.getElementById("div7").style.display = "none";
+    document.getElementById("div-1").style.display = "none";
+
+
+  }
+
+  function myFunction4() {
+    document.getElementById("div4").style.display = "block";
+    document.getElementById("div1").style.display = "none";
+    document.getElementById("div2").style.display = "none";
+    document.getElementById("div3").style.display = "none";
+    document.getElementById("div0").style.display = "none";
+    document.getElementById("div5").style.display = "none";
+    document.getElementById("div6").style.display = "none";
+    document.getElementById("div7").style.display = "none";
+    document.getElementById("div-1").style.display = "none";
+  }
+
+  function myFunction5(){
+    document.getElementById("div5").style.display = "block";
+    document.getElementById("div0").style.display = "none";
+    document.getElementById("div1").style.display = "none";
+    document.getElementById("div2").style.display = "none";
+    document.getElementById("div3").style.display = "none";
+    document.getElementById("div4").style.display = "none";
+    document.getElementById("div6").style.display = "none";
+    document.getElementById("div7").style.display = "none";
+    document.getElementById("div-1").style.display = "none";
+  }
+  function myFunction6(){
+    document.getElementById("div6").style.display = "block";
+    document.getElementById("div0").style.display = "none";
+    document.getElementById("div1").style.display = "none";
+    document.getElementById("div2").style.display = "none";
+    document.getElementById("div3").style.display = "none";
+    document.getElementById("div4").style.display = "none";
+    document.getElementById("div5").style.display = "none";
+    document.getElementById("div7").style.display = "none";
+    document.getElementById("div-1").style.display = "none";
+  }
+  function myFunction7(){
+    document.getElementById("div7").style.display = "block";
+    document.getElementById("div0").style.display = "none";
+    document.getElementById("div1").style.display = "none";
+    document.getElementById("div2").style.display = "none";
+    document.getElementById("div3").style.display = "none";
+    document.getElementById("div4").style.display = "none";
+    document.getElementById("div5").style.display = "none";
+    document.getElementById("div6").style.display = "none";
+    document.getElementById("div-1").style.display = "none";
+  }
+  </script>
+
+
+</body>
+
+</html>
