@@ -1,5 +1,5 @@
 #database name change here
-use bn2buig34duyzy4zkxh8;
+use safeya_dbms;
 
 ALTER TABLE `complaints` 
 CHANGE COLUMN `Category` `Category` TINYINT NOT NULL ,

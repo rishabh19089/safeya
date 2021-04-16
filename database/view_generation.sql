@@ -1,4 +1,4 @@
-use bn2buig34duyzy4zkxh8;
+use safeya_dbms;
 
 create view student3 as
 select Remarks,Rating,Complaint_ID from complaints;
