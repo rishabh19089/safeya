@@ -36,7 +36,7 @@ def generate_complaint(loc):
 def rate_complaint(complaint_no, my_rating):
     query1 = f"""
     UPDATE complaints SET Rating={my_rating} WHERE Complaint_ID = {complaint_no}"""
-    query2 = f"""UPDATE Workers SET Average_Rating = (num_complaints*Average_Rating+{my_rating})/(num_complaints+1)"""
+    query2 = f"""UPDATE Workers SET Avg_Rating = (num_complaints*Avg_Rating+{my_rating})/(num_complaints+1) WHERE ID = (SELECT Worker_ID FROM assigns WHERE Complaint_ID = {complaint_no})"""
     cursor.execute(query1)
     cursor.execute(query2)
     mydb.commit()
@@ -65,9 +65,9 @@ def home():
 
 @app.route("/student",  methods=['POST', "GET"])
 def student():
+    msg1 = ""
+    msg2 = ""
     if "username" in session and get_redirect(session["username"]) == "student":
-        msg1 = ""
-        msg2 = ""
         usr = session["username"]
         q = f"""SELECT CONCAT(First_name, " ", Last_name), Age, Gender, Last_Health_Check, Location_ID FROM Students WHERE ID = {usr}"""
         cursor.execute(q)
@@ -92,8 +92,7 @@ def student():
                     comp_no = generate_complaint(location)
                     msg1 = f"Complaint {comp_no} Generated!"
         if request.method == 'POST' and 'star' in request.form:
-            print("hello")
-            complaint_no = request.form["fname"]
+            complaint_no = int(request.form["fname"])
             rating = request.form["star"]
             print(rating)
             rate_complaint(complaint_no, rating)
@@ -104,10 +103,26 @@ def student():
 def staff():
     if "username" in session and get_redirect(session["username"]) == "staff":
         usr = session["username"]
-        return render_template('fmsdash.html')
+        q = f"""SELECT CONCAT(First_name, " ", Last_name), Age, Gender, Last_Assigned, Temperature FROM workers WHERE ID = {usr}"""
+        cursor.execute(q)
+        name, age, gender, last_assigned, temp = cursor.fetchall()[0]
+        if gender==0:
+            gender = "Male"
+        else:
+            gender = "Female"
+        if {usr}:
+            cursor.execute(f"""SELECT Complaint_ID, Location_ID, Start_time FROM complaints WHERE Complaint_ID IN (SELECT Complaint_ID FROM assignments WHERE ID= {usr})""")
+            l = cursor.fetchall()
+            # pending = ""
+            # for ind,i in enumerate(l):
+            #     complaint_id, location_id, date_time = i
+            #     pending += f"Complaint_ID is "+ str(complaint_id) + " at location ID "+str(location_id)+" which was started at "+str(date_time) +".\n"
+            # print(pending)
+        print(name, usr, age, gender)
+        return render_template('fmsdash.html', name_=name, roll=usr, age=age, gender=gender, last_assigned=last_assigned, temp=temp, x=l)
     return "Please Login First!"
 
-@app.route("/admins")
+@app.route("/admins", methods=['POST', "GET"])
 def admins():
     if "username" in session and get_redirect(session["username"]) == "admins":
         usr = session["username"]
