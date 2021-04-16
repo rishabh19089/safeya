@@ -19,6 +19,9 @@
 -- Table structure for table `assignments`
 --
 
+create database safeya_dbms;
+use safeya_dbms;
+
 DROP TABLE IF EXISTS `assignments`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
