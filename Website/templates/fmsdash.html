@@ -32,13 +32,28 @@
             <img src="{{url_for('static', filename='images/IIITlogo.png')}}" alt="" class="iiit">
             <img src="{{url_for('static', filename='images/logo.png')}}" alt="" class="safeya">
 
-            <div class="deets-1" id="div-1"> <label>Name: <br><br> Worker ID: <br><br> Age: <br><br> Gender: <br> </label></div>
+            <div class="deets-1" id="div-1"> <label>Name:{{name_}} <br><br> Worker ID:{{roll}} <br><br> Age:{{age}} <br><br> Gender:{{gender}} <br> </label></div>
 
-            <div class="deets" id="div0"> <label>Your pending assignments are: </label></div>
+            <div class="deets" id="div0"> <label>Your pending assignments are:<br></label><br><br>
+            <table>
+              <tr>
+                <th>Complaint ID</th>
+                <th>Location ID</th>
+                <th>Start Time</th>
+              </tr>
+            {% for row in x %}
+              <tr>
+                <td>{{ row[0]}}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+              </tr>
+          {% endfor %}
+        </table>
+            </div>
 
-            <div class="checkup" id="div1"> <label>Your assigned job was ____.</label></div>
+            <div class="checkup" id="div1"> <label>Your assigned job was {{last_assigned}}.</label></div>
 
-            <div class="clean" id="div2"> <label>Your temperature check was at ____.</label></div>
+            <div class="clean" id="div2"> <label>Your temperature check was at {{temp}}.</label></div>
 
 
               <div class="logout">
