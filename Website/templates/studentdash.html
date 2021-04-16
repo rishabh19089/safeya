@@ -30,46 +30,47 @@
             <!-- <h1>Content Box</h1> -->
             <img class="iiit" src= {{url_for('static', filename='images/IIITlogo.png')}} alt="">
             <img class="safeya" src= {{url_for('static', filename='images/logo.png')}} alt="">
-            <div class="deets" id="div0"> <label>Name: {{name_}}<br><br> Roll Number: <br><br> Age: <br><br> Gender: <br> </label></div>
+            <div class="deets" id="div0"> <label>Name: {{name_}}<br><br> Roll Number: {{roll}}<br><br> Age: {{age}}<br><br> Gender: {{gender}}<br> </label></div>
 
-            <div class="checkup" id="div1"> <label>Your last health checkup was done on ____.</label></div>
+            <div class="checkup" id="div1"> <label>Your last health checkup was done on {{last_check}}.</label></div>
 
-            <div class="clean" id="div2"> <label>Your room was last cleaned on ____.</label></div>
+            <div class="clean" id="div2"> <label>Your room was last cleaned on {{last_cleaned}}.</label></div>
 
             <div class="req" id="div3">
-            <form class="" action="" method="post">
+            <form class="" action="#" method="post">
               <label>Choose the room you want to get cleaned</label><br><br>
 
-                <input type="radio" id="male" name="gender" value="male">
+                <input type="radio" id="male" name="gender" value="my_room">
                 <label for="male">My room</label><br><br>
-                <input type="radio" id="female" name="gender" value="female">
+                <input type="radio" id="female" name="gender" value="other">
                 <label for="female">Other room</label><br>
-                <input type="text" id="fname" name="fname" value="Mention room no."><br>
+                <input type="text" id="fname" name="fname_room" value="Mention room no."><br>
                 <input type="submit" name="submit" value="Submit">
+                <span>{{msg}}</span>
             </form>
               </div>
 
               <div class="rate" id="div4"> <label>Rate a complaint</label><br>
-                <input type="text" id="fname" name="fname" value="Mention complaint no."><br>
-                <!--  -->
+                  <input type="text" id="fname" name="fname"><br>
                             <div class="stars">
-                              <form action="">
-                                <input class="star star-5" id="star-5" type="radio" name="star"/>
+                              <form action="{{ url_for('student') }}">
+                                <input class="star star-5" id="star-5" type="radio" name="star" value=5/>
                                 <label class="star star-5" for="star-5"></label>
-                                <input class="star star-4" id="star-4" type="radio" name="star"/>
+                                <input class="star star-4" id="star-4" type="radio" name="star" value=4/>
                                 <label class="star star-4" for="star-4"></label>
-                                <input class="star star-3" id="star-3" type="radio" name="star"/>
+                                <input class="star star-3" id="star-3" type="radio" name="star" value=3/>
                                 <label class="star star-3" for="star-3"></label>
-                                <input class="star star-2" id="star-2" type="radio" name="star"/>
+                                <input class="star star-2" id="star-2" type="radio" name="star" value=2/>
                                 <label class="star star-2" for="star-2"></label>
-                                <input class="star star-1" id="star-1" type="radio" name="star"/>
+                                <input class="star star-1" id="star-1" type="radio" name="star" value=1/>
                                 <label class="star star-1" for="star-1"></label>
                                 <div class="num">1 &ensp; 2  &ensp; 3  &ensp; 4  &ensp; 5</div>
                                 <input type="submit" name="submit" value="Submit">
                               </form>
-
                             </div>
-
+                          
+                            
+                  
                 <!--  -->
 
 
