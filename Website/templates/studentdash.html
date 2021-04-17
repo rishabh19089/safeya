@@ -45,29 +45,29 @@
                 <input type="radio" id="female" name="gender" value="other">
                 <label for="female">Other room</label><br>
                 <input type="text" id="fname" name="fname_room" value="Mention room no."><br>
-                <input type="submit" name="submit" value="Submit">
-                <span>{{msg}}</span>
+                <input type="submit" id="sub" name="submit" value="Submit!"><br>
+                <span>{{msg1}}</span>
             </form>
               </div>
 
               <div class="rate" id="div4"> <label>Rate a complaint</label><br>
-                  <input type="text" id="fname" name="fname"><br>
+                <form class="" action="{{ url_for('student') }}" method="post">
+                  <input type="text" id="fname" name="fname" placeholder="Complaint Number"><br>
                             <div class="stars">
-                              <form action="{{ url_for('student') }}">
-                                <input class="star star-5" id="star-5" type="radio" name="star" value=5/>
+                                <input class="star star-5" id="star-5" type="radio" name="star" value=1 />
                                 <label class="star star-5" for="star-5"></label>
-                                <input class="star star-4" id="star-4" type="radio" name="star" value=4/>
+                                <input class="star star-4" id="star-4" type="radio" name="star" value=2 />
                                 <label class="star star-4" for="star-4"></label>
-                                <input class="star star-3" id="star-3" type="radio" name="star" value=3/>
+                                <input class="star star-3" id="star-3" type="radio" name="star" value=3 />
                                 <label class="star star-3" for="star-3"></label>
-                                <input class="star star-2" id="star-2" type="radio" name="star" value=2/>
+                                <input class="star star-2" id="star-2" type="radio" name="star" value=4 />
                                 <label class="star star-2" for="star-2"></label>
-                                <input class="star star-1" id="star-1" type="radio" name="star" value=1/>
+                                <input class="star star-1" id="star-1" type="radio" name="star" value=5 />
                                 <label class="star star-1" for="star-1"></label>
                                 <div class="num">1 &ensp; 2  &ensp; 3  &ensp; 4  &ensp; 5</div>
-                                <input type="submit" name="submit" value="Submit">
-                              </form>
                             </div>
+                            <input type="submit" id="sub2" name="submit" value="Submit!">
+                </form>
                           
                             
                   
