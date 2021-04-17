@@ -37,14 +37,14 @@
             <img src="{{url_for('static', filename='images/IIITlogo.png')}}" alt="" class="iiit">
             <img src="{{url_for('static', filename='images/logo.png')}}" alt="" class="safeya">
 
-            <div class="deets-1" id="div-1"> <label>Name: <br><br> Roll Number: <br><br> Age: <br><br> Gender: <br> </label></div>
+            <div class="deets-1" id="div-1"> <label>Name: <br><br> ID: <br><br> Age: <br><br> Gender: <br> <br> Designation: </label></div>
 
 
-            <div class="deets" id="div0"> <label>Available members are- </label></div>
+            <div class="deets" id="div0"> <label>Available members are : </label></div>
 
-            <div class="checkup" id="div1"> <label>The locations are-</label></div>
+            <div class="checkup" id="div1"> <label>The locations are :</label></div>
 
-            <div class="clean" id="div2"> <label>Members with rating less than 2.5 are-</label></div>
+            <div class="clean" id="div2"> <label>Members with rating less than 2.5 are :</label></div>
 
             <!-- <div class="req" id="div3">
             <form class="" action="" method="post">
@@ -59,38 +59,24 @@
             </form>
               </div> -->
 
-              <div class="req" id="div3"><label>The unassigned tasks-</label>
+              <div class="req" id="div3"><label>The unassigned tasks are :</label> <br> <br>
+              <form class="" action="#" method="post">
+                <input type="text" id="fnam" name="cid" value="" placeholder="Complaint id"> <br>
+                <input type="text" id="fna" name="wid" value="" placeholder="Worker id"> <br>
+                <input type="submit" name="submit" value="Assign">
+              </form>
+
 
                 </div>
 
 
-              <!-- <div class="rate" id="div4"> <label>Rate a complaint</label><br>
-                <input type="text" id="fname" name="fname" value="Mention complaint no."><br>
-
-                            <div class="stars">
-                              <form action="">
-                                <input class="star star-5" id="star-5" type="radio" name="star"/>
-                                <label class="star star-5" for="star-5"></label>
-                                <input class="star star-4" id="star-4" type="radio" name="star"/>
-                                <label class="star star-4" for="star-4"></label>
-                                <input class="star star-3" id="star-3" type="radio" name="star"/>
-                                <label class="star star-3" for="star-3"></label>
-                                <input class="star star-2" id="star-2" type="radio" name="star"/>
-                                <label class="star star-2" for="star-2"></label>
-                                <input class="star star-1" id="star-1" type="radio" name="star"/>
-                                <label class="star star-1" for="star-1"></label>
-                                <div class="num">1 &ensp; 2  &ensp; 3  &ensp; 4  &ensp; 5</div>
-                                <input type="submit" name="submit" value="Submit">
-                              </form>
-
-                            </div>
-              </div> -->
 
               <div class="rate" id="div4"> <label>Mention location id to view image</label><br>
-                <input type="text" id="fname" name="fname" value=""><br>
+
 
                             <div class="stars">
-                              <form action="">
+                              <form action="#" method="post">
+                                <input type="text" id="fname" name="washroom" value=""><br>
                                 <input type="submit" name="submit" value="Submit">
                               </form>
 
@@ -98,10 +84,11 @@
               </div>
 
               <div class="five" id="div5"> <label>Mention complaint id to view remarks</label><br>
-                <input type="text" id="fname" name="fname" value=""><br>
+
 
                             <div class="stars">
-                              <form action="">
+                              <form action="#" method="post">
+                                <input type="text" id="fname" name="remarks" value=""><br>
                                 <input type="submit" name="submit" value="Submit">
                               </form>
 
@@ -110,32 +97,22 @@
 
               <div class="six" id="div6"> <label></label><br>
                 <div class="stars">
-                  <form action="">
+                  <form action="#" method="post">
 
                     <input type="text" id="fname" name="fname" value="Mention complaint id"> <br>
-                    <input type="submit" name="submit" value="Check"> <br> <br> <br>
-                    <label>Give rating</label><br>
-                    <input class="star star-5" id="star-5" type="radio" name="star"/>
-                    <label class="star star-5" for="star-5"></label>
-                    <input class="star star-4" id="star-4" type="radio" name="star"/>
-                    <label class="star star-4" for="star-4"></label>
-                    <input class="star star-3" id="star-3" type="radio" name="star"/>
-                    <label class="star star-3" for="star-3"></label>
-                    <input class="star star-2" id="star-2" type="radio" name="star"/>
-                    <label class="star star-2" for="star-2"></label>
-                    <input class="star star-1" id="star-1" type="radio" name="star"/>
-                    <label class="star star-1" for="star-1"></label>
-                    <div class="num">1 &ensp; 2  &ensp; 3  &ensp; 4  &ensp; 5</div> <br> <br>
-                    <label>Give remarks</label><br>
-                    <input type="text" id="fname" name="fname" value=""> <br>
-                    <input type="submit" name="submit" value="Submit">
+                    <input type="submit" name="submit" value="Check"> <br> <br>
+                    <label>Name of staff -</label><br> <br>
+                    <label>Remarks -</label><br> <br>
+                    <label>Ratings -</label><br>
+                    <!-- <input type="text" id="fname" name="fname" value=""> <br>
+                    <input type="submit" name="submit" value="Submit"> -->
 
                   </form>
 
                 </div>
               </div>
 
-              <div class="seven" id="div7"><label>The tasks in progress are-</label>
+              <div class="seven" id="div7"><label>The tasks in progress are :</label>
 
                 </div>
 
