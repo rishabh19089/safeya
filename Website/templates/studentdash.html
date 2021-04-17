@@ -22,6 +22,7 @@
                  <li> <div onclick="return myFunction2();"> Last Cleaned Time of My Hostel Room</div></li>
                   <li><div onclick="return myFunction3();">Request for Cleaning in my room</div></li>
                   <li><div onclick="return myFunction4();">Give Rating of Complaint</div></li>
+                  <li><div onclick="return myFunction5();">Resolve Complaint</div></li>
             </ul>
         </div>
 
@@ -76,6 +77,26 @@
 
               </div>
 
+
+              <div class="resolve" id="div5">
+            
+                <form action="{{ url_for('student') }}" method="post">
+                  <label>Enter complaint id</label> <br>
+                  <input type="text" name="" value="">
+                  <br> <br> <br>
+                  <input class="star star-5" id="star-5" type="radio" name="res" value='resolved' />
+                  <label class="star star-5" for="star-5">Resolved</label>
+                   <br>
+            
+                  <input class="star star-4" id="star-4" type="radio" name="res" value='not resolved' />
+                  <label class="star star-4" for="star-4">Some issue</label>
+                  <br>
+            
+            
+                  <input type="submit" name="submit" value="Submit">
+                </form>
+              </div>
+              
               <div class="logout">
                               <a href="{{ url_for('logout') }}">Logout</a>
                             </div>
@@ -92,7 +113,7 @@
       document.getElementById("div2").style.display = "none";
       document.getElementById("div3").style.display = "none";
       document.getElementById("div4").style.display = "none";
-
+      document.getElementById("div5").style.display = "none";
 
     }
 
@@ -103,7 +124,7 @@
     document.getElementById("div3").style.display = "none";
     document.getElementById("div4").style.display = "none";
     document.getElementById("div0").style.display = "none";
-
+    document.getElementById("div5").style.display = "none";
 
   }
 
@@ -113,7 +134,7 @@
     document.getElementById("div3").style.display = "none";
     document.getElementById("div4").style.display = "none";
     document.getElementById("div0").style.display = "none";
-
+    document.getElementById("div5").style.display = "none";
 
   }
 
@@ -123,7 +144,7 @@
     document.getElementById("div2").style.display = "none";
     document.getElementById("div4").style.display = "none";
     document.getElementById("div0").style.display = "none";
-
+    document.getElementById("div5").style.display = "none";
 
   }
 
@@ -133,6 +154,19 @@
     document.getElementById("div2").style.display = "none";
     document.getElementById("div3").style.display = "none";
     document.getElementById("div0").style.display = "none";
+    document.getElementById("div5").style.display = "none";
+
+
+
+  }
+
+  function myFunction5() {
+    document.getElementById("div5").style.display = "block";
+    document.getElementById("div1").style.display = "none";
+    document.getElementById("div2").style.display = "none";
+    document.getElementById("div3").style.display = "none";
+    document.getElementById("div0").style.display = "none";
+    document.getElementById("div4").style.display = "none";
 
 
   }
