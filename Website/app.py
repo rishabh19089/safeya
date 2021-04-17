@@ -1,4 +1,3 @@
-from re import U
 from flask import Flask, render_template, request, url_for, redirect, session
 import mysql.connector
 import keyring as kr
