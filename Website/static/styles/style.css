@@ -107,6 +107,14 @@ body{
     font-size: 30px;
 }
 
+.main .resolve{
+    position: absolute;
+    top: 50%;
+    color: #fff;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+}
 
 
 .rate .num{
@@ -163,6 +171,11 @@ input[type="submit"]{
 #div4 {
   display: none;
 }
+
+#div5 {
+  display: none;
+}
+
 /*/////////////////*/
 
 
